@@ -45,6 +45,11 @@ public class Resultado {
     public void setTiempoMillis(double tiempoMillis) {
         this.tiempoMillis = tiempoMillis;
     }
+    @Override
+    public String toString() {
+        return "Resultado [algoritmo=" + algoritmo + ", escenario=" + escenario + ", sample=" + sample + ", tiempoNano="
+                + tiempoNano + ", tiempoMillis=" + tiempoMillis + "]";
+    }
 
     
 

@@ -1,6 +1,8 @@
 package utils;
 
 
+import java.util.concurrent.Callable;
+
 //import java.util.concurrent.Callable;
 import models.Resultado;
 

@@ -30,20 +30,27 @@ public class SortPersonaMethods {
     }
 
     private int particionar(Persona[] personas, int inicio, int fin) {
-    Persona pivote = personas[fin];
+        Persona pivote = personas[inicio + (fin - inicio) / 2];
+    
     int i = inicio - 1;
+    int j = fin + 1;
 
-    for (int j = inicio; j < fin; j++) {
-        if (personas[j].getCriterioOrdenamiento() <=
-            pivote.getCriterioOrdenamiento()) {
-
+    while (true) {
+        do {
             i++;
-            intercambiar(personas, i, j);
+        } while (personas[i].getCriterioOrdenamiento() < pivote.getCriterioOrdenamiento());
+
+        do {
+            j--;
+        } while (personas[j].getCriterioOrdenamiento() > pivote.getCriterioOrdenamiento());
+
+        if (i >= j) {
+            return j;
         }
+        intercambiar(personas, i, j);
     }
 
-    intercambiar(personas, i + 1, fin);
-    return i + 1;
+ 
     }
 
     private void intercambiar(Persona[] personas, int i, int j) {
